@@ -1,16 +1,19 @@
 ## Intercom Messenger App | Ruby Example
 
-A simple Intercom Messenger App built with Ruby & Sinatra. This app will pull images from https://dog.ceo/dog-api/ and ask the user for a rating.  
-
-The rating will be posted on to the User's profile page in Intercom.
-
-This is designed as a sample app for building Intercom Messenger apps in Ruby. The code is commented and includes links to some useful tools for manipulating the required json.
-
-Check it out in the messenger [here](https://intercomcstest.wpengine.com/?page_id=144). First call might fail as Heroku Dynos spin up.
+A basic Intercom Inbox app for demo purposes. This app uses the [Intercom App Framework](https://app.intercom.com/a/canvas-kit-builder) to provide a UI for agents to create cases in a CRM of their choosing.
 
 ## In Use
-#### Messenger:
-<img src="https://cl.ly/ba357ee74ad5/Image%2525202019-02-07%252520at%2525207.21.45%252520PM.png">
+#### Inbox:
+<img src="https://downloads.intercomcdn.com/i/o/206430329/8265babc5c45f959132f6d96/demo.gif">
 
-#### Intercom Profile:
-<img src="https://downloads.intercomcdn.com/i/o/101948189/94e44216a696fbd41fb77174/image.png">  
+#### Your CRM:
+In this example we have provided the variables captured on submission - these are output in console for you to include in your POST request:
+```
+
+puts "****************************"
+puts "Case Title: #{case_title}"
+puts "Case Description: #{case_description}"
+puts "Case Label: #{case_label}"
+puts "Case Priority: #{case_priority}"
+puts "****************************"
+```

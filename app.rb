@@ -23,11 +23,23 @@ end
 
 #When a user pushes a button in the app
 post '/submit' do
+  submitted_card = JSON.parse(request.body.read)
+  case_title = submitted_card["input_values"]["title"]
+  case_description = submitted_card["input_values"]["description"]
+  case_label = submitted_card["input_values"]["label"]
+  case_priority = submitted_card["input_values"]["priority"]
 
-  # -----------------------
-  # SIEBEL LOGIC GOES HERE
-  # Here is where you can ingest & parse what was sent from Intercom when an admin presses submit
-  # -----------------------
+  puts "****************************"
+  puts "Case Title: #{case_title}"
+  puts "Case Description: #{case_description}"
+  puts "Case Label: #{case_label}"
+  puts "Case Priority: #{case_priority}"
+  puts "****************************"
+
+    # -----------------------
+    # SIEBEL LOGIC GOES HERE
+    # Here is where you can ingest & parse what was sent from Intercom when an admin presses submit
+    # -----------------------
 
   # build card to return after submission
   success_card = "{\"canvas\":{\"content\":{\"components\":[{\"id\":\"success-card\",\"type\":\"text\",\"text\":\"Case Submitted\",\"style\":\"header\",\"align\":\"center\",\"bottom_margin\":false},{\"id\":\"welcome-link\",\"type\":\"image\",\"url\":\"https://downloads.intercomcdn.com/i/o/206415512/c618f364d4fdb02fb20ae102/tenor_fixed.gif\",\"align\":\"center\",\"width\":130,\"height\":130,\"rounded\":true},{\"id\":\"b57a7c7047a3674d6876063a2e3a\",\"type\":\"button\",\"label\":\"Submit Another\",\"style\":\"primary\",\"action\":{\"type\":\"submit\",\"url\":null},\"bottom_margin\":false}]},\"stored_data\":{}}}"
